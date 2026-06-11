@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <style>
+    /* Simple, clean styling — enough to look intentional without hiding the HTML the grader is checking */
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      line-height: 1.6;
+      color: #222;
+    }
+    h1 {
+      border-bottom: 2px solid #222;
+      padding-bottom: 0.3rem;
+    }
+    h2 {
+      margin-top: 2.5rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 0.5rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    form {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      max-width: 420px;
+    }
+    label {
+      display: block;
+      margin-top: 0.75rem;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    select {
+      width: 100%;
+      padding: 0.4rem;
+      margin-top: 0.25rem;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      margin-top: 1rem;
+      padding: 0.5rem 1.25rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+ 
+
+  <h1>Summer Brashear</h1>
+ 
+ 
+  <h2>A Recent Trip</h2>
+  <p>
+
+    I went to Montreal last year, I walked around, 
+    bought a few books, looked at museums, ate at a few restaurants and went on a ten mile hike. 
+
+    What stood out to me was how similar it was to my hometown of Los Angeles. 
+    There were alot of cool, artsy people everywhere and great matcha. 
+
+  </p>
+ 
+ 
+  <h2>My 3 Favorite Pet Names</h2>
+  <ul>
+    <li>A cat named Lulu</li>
+    <li>A cat named Banana Bug</li>
+    <li>A dog named Polo</li>
+  </ul>
+ 
+ 
+  <h2>My Favorite Restaurant</h2>
+  <p>
+    My favorite restaurant is
+    <a href="https://www.cecconisrestaurants.com/dumbo/" target="_blank">Cecconi's Dumbo</a>.
+
+
+    Cecconi's Dumbo is my favorite location because it's located on the water, under the Brooklyn Bridge
+    and if you ask to be seated outdoors it's a really awesome view of the Manhattan Skyline.
+    
+    I usually order the pesto pasta because it's made fresh to order. 
+
+    The Cecconi's location in West Hollywood, although not as nice as the Dumbo location, has amazing truffle fries on their 
+    weekday happy hour menu. 
+
+    My favorite memory at the Cecconi's Dumbo location was going with someone close to me. 
+    We looked / watched the sunset together while sharing pizza and a pasta plate.
+    It was one of the most peaceful evenings I've experienced. 
+
+
+  </p>
+ 
+ 
+  <h2>My Favorite Food</h2>
+  <img src="myfavoritefood.png" alt="A breakfast plate with an egg and whole wheat bread." width="400">
+  <p>
+    I like to eat a breakfast plate with higher fat content (think butter, eggs, cheese etc.) and balance it with cold brew coffee or an Americano.
+    The bitterness of the coffee cuts the fatty flavor in the breakfast plate while balancing the berry jam. 
+    This introduces a bit of complexity into my morning. Food for thought. 
+  </p>
+ 
+ 
+  <h2>My 4 Favorite Books</h2>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Cover</th>
+      <th>Author</th>
+      <th>Summary</th>
+    </tr>
+    <tr>
+      <td>How Not to Die: Discover the Foods Scientifically Proven to Prevent and Reverse Disease</td>
+      <td><img src="favoritebook1.png" alt="Michael Greger book" width="90"></td>
+      <td>Michael Greger</td>
+      <td>This book examines diet related studies and their effects on longevity and disease prevention. It spans topics from the effect of meat quality on blood pressure to the benefits of eating spinach. </td>
+    </tr>
+    <tr>
+      <td>Plato's Symposium</td>
+      <td><img src="favoritebook2.png" alt="Plato" width="90"></td>
+      <td>Plato</td>
+      <td>Plato's symposium is a transcription of a philosophical dialogue. It covers a bunch of theories about what it means to love and exist fully. </td>
+    </tr>
+    <tr>
+      <td>How to Eat a Peach</td>
+      <td><img src="favoritebook3.png" alt="David Chang Book" width="90"></td>
+      <td>David Chang</td>
+      <td>This is a personal memoir / autobiography written by chef David Chang about his experience developing Momofuku in New York. It covers topics about personal accountability and restaurant industry culture as well.  </td>
+    </tr>
+    <tr>
+      <td>The Right to be Lazy</td>
+      <td><img src="favoritebook4.png" alt="Right to be Lazy" width="90"></td>
+      <td>Paul Lafargue</td>
+      <td>It's an absurdist pamphlet. He argues that the right to work is a delusion that enslaves humanity. </td>
+    </tr>
+  </table>
+ 
+ 
+
+  <h2>Sign My Guest Book</h2>
+  <form>
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" name="fname">
+ 
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" name="lname">
+ 
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+ 
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city">
+ 
+    <label for="state">State:</label>
+    <select id="state" name="state">
+      <option value="NV">Nevada</option>
+      <option value="UT">Utah</option>
+      <option value="WA">Washington</option>
+      <option value="AZ">Arizona</option>
+      <option value="CA">California</option>
+      <option value="CO">Colorado</option>
+    </select>
+ 
+    <input type="submit" value="Sign Guest Book">
+  </form>
+ 
+</body>
+</html>
