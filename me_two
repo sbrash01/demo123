@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+ 
+  <!-- (1) Sans-serif Google Font, embed code from fonts.google.com -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+ 
+  <!-- (Challenge) Font Awesome for the Facebook / X icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+ 
+  <style>
+    /* (1) Default font is now a sans-serif Google font */
+    body {
+      font-family: 'Poppins', sans-serif;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      line-height: 1.6;
+      color: #222;
+    }
+ 
+    /* (2) Color + size for all H1 and H2, with 30px margin below */
+    h1, h2 {
+      color: #1b4965;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      border-bottom: 2px solid #1b4965;
+      padding-bottom: 0.3rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 2.5rem;
+    }
+ 
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+ 
+    /* (3) Border the list and center the box (NOT the items).
+       A width + margin:auto centers the box; we deliberately do
+       NOT use text-align:center, so the list items stay left. */
+    ul {
+      border: 2px solid #1b4965;
+      width: 280px;
+      margin: 1rem auto;
+      padding: 1rem 1rem 1rem 2.5rem;
+    }
+ 
+    /* (4) Favorite food: background-image div + adjacent text div */
+    .food-image {
+      display: inline-block;
+      width: 360px;
+      height: 270px;
+      background-image: url('myfavoritefood.png');
+      background-size: cover;
+      background-position: center;
+      vertical-align: top;
+    }
+    .food-text {
+      display: inline-block;
+      width: 280px;
+      vertical-align: top;
+    }
+ 
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 0.5rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #d6e2ea;
+    }
+ 
+    /* (5) Alternate row background. :nth-child is a pseudo-class;
+       the header is row 1 (odd), so even rows get striped. */
+    table tr:nth-child(even) {
+      background-color: #eaf1f5;
+    }
+ 
+    /* (6) Two-column form: label column (right-aligned) + field column */
+    form {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      max-width: 420px;
+    }
+    .form-row {
+      margin-top: 0.75rem;
+    }
+    .form-label {
+      display: inline-block;
+      width: 110px;
+      text-align: right;
+      padding-right: 10px;
+      vertical-align: middle;
+    }
+    .form-label label {
+      display: inline;          /* override generic block label */
+      font-weight: bold;
+    }
+    .form-input {
+      display: inline-block;
+      width: 250px;
+      vertical-align: middle;
+    }
+    .form-input input[type="text"],
+    .form-input input[type="email"],
+    .form-input select {
+      width: 100%;
+      padding: 0.4rem;
+      box-sizing: border-box;
+    }
+    .form-input input[type="submit"] {
+      padding: 0.5rem 1.25rem;
+      cursor: pointer;
+    }
+ 
+    /* (Challenge) Fixed social icons: 100px from top, 35px from right */
+    .social {
+      position: fixed;
+      top: 100px;
+      right: 35px;
+      font-size: 1.8rem;
+    }
+    .social a {
+      margin-left: 0.5rem;
+      color: #1b4965;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+ 
+  <!-- (Challenge) Social icons -->
+  <div class="social">
+    <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https://twitter.com" target="_blank" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+  </div>
+ 
+  <h1>Summer Brashear</h1>
+ 
+  <h2>A Recent Trip</h2>
+  <p>
+    I went to Montreal last year, I walked around,
+    bought a few books, looked at museums, ate at a few restaurants and went on a ten mile hike.
+    What stood out to me was how similar it was to my hometown.
+    There were alot of cool, artsy people everywhere and great matcha.
+  </p>
+ 
+  <h2>My 3 Favorite Pet Names</h2>
+  <ul>
+    <li>A cat named Lulu</li>
+    <li>A cat named Banana Bug</li>
+    <li>A dog named Polo</li>
+  </ul>
+ 
+  <h2>My Favorite Restaurant</h2>
+  <p>
+    My favorite restaurant is
+    <a href="https://www.cecconisrestaurants.com/dumbo/" target="_blank">Cecconi's Dumbo</a>.
+    Cecconi's Dumbo is my favorite location because it's located on the water, under the Brooklyn Bridge
+    and if you ask to be seated outdoors it's a really awesome view of the Manhattan Skyline.
+    I usually order the pesto pasta because it's made fresh to order.
+    The Cecconi's location in West Hollywood, although not as nice as the Dumbo location, has amazing truffle fries on their
+    weekday happy hour menu.
+    My favorite memory at the Cecconi's Dumbo location was going with a friend of mine.
+    I looked / watched the sunset together while sharing pizza and a pasta plate.
+    It was one of the most peaceful evenings I've experienced.
+  </p>
+ 
+  <!-- (4) Background-image div + adjacent text div instead of img + p -->
+  <h2>My Favorite Food</h2>
+  <div class="food-image"></div>
+  <div class="food-text">
+    <p>
+      I like to eat a breakfast plate with higher fat content (think butter, eggs, cheese etc.) and balance it with cold brew coffee or an Americano.
+      The bitterness of the coffee cuts the fatty flavor in the breakfast plate while balancing the berry jam.
+      This introduces a bit of complexity into my morning. Food for thought.
+    </p>
+  </div>
+ 
+  <h2>My 4 Favorite Books</h2>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Cover</th>
+      <th>Author</th>
+      <th>Summary</th>
+    </tr>
+    <tr>
+      <td>How Not to Die: Discover the Foods Scientifically Proven to Prevent and Reverse Disease</td>
+      <td><img src="favoritebook1.png" alt="Michael Greger book" width="90"></td>
+      <td>Michael Greger</td>
+      <td>This book examines diet related studies and their effects on longevity and disease prevention. It spans topics from the effect of meat quality on blood pressure to the benefits of eating spinach.</td>
+    </tr>
+    <tr>
+      <td>Plato's Symposium</td>
+      <td><img src="favoritebook2.png" alt="Plato" width="90"></td>
+      <td>Plato</td>
+      <td>Plato's symposium is a transcription of a philosophical dialogue. It covers a bunch of theories about what it means to love and exist fully.</td>
+    </tr>
+    <tr>
+      <td>How to Eat a Peach</td>
+      <td><img src="favoritebook3.png" alt="David Chang Book" width="90"></td>
+      <td>David Chang</td>
+      <td>This is a personal memoir / autobiography written by chef David Chang about his experience developing Momofuku in New York. It covers topics about personal accountability and restaurant industry culture as well.</td>
+    </tr>
+    <tr>
+      <td>The Right to be Lazy</td>
+      <td><img src="favoritebook4.png" alt="Right to be Lazy" width="90"></td>
+      <td>Paul Lafargue</td>
+      <td>It's an absurdist pamphlet. He argues that the right to work is a delusion that enslaves humanity.</td>
+    </tr>
+  </table>
+ 
+  <!-- (6) Form rebuilt into label column + field column -->
+  <h2>Sign My Guest Book</h2>
+  <form>
+    <div class="form-row">
+      <span class="form-label"><label for="fname">First Name:</label></span>
+      <span class="form-input"><input type="text" id="fname" name="fname"></span>
+    </div>
+    <div class="form-row">
+      <span class="form-label"><label for="lname">Last Name:</label></span>
+      <span class="form-input"><input type="text" id="lname" name="lname"></span>
+    </div>
+    <div class="form-row">
+      <span class="form-label"><label for="email">Email:</label></span>
+      <span class="form-input"><input type="email" id="email" name="email"></span>
+    </div>
+    <div class="form-row">
+      <span class="form-label"><label for="city">City:</label></span>
+      <span class="form-input"><input type="text" id="city" name="city"></span>
+    </div>
+    <div class="form-row">
+      <span class="form-label"><label for="state">State:</label></span>
+      <span class="form-input">
+        <select id="state" name="state">
+          <option value="NV">Nevada</option>
+          <option value="UT">Utah</option>
+          <option value="WA">Washington</option>
+          <option value="AZ">Arizona</option>
+          <option value="CA">California</option>
+          <option value="CO">Colorado</option>
+        </select>
+      </span>
+    </div>
+    <div class="form-row">
+      <span class="form-label"></span>
+      <span class="form-input"><input type="submit" value="Sign Guest Book"></span>
+    </div>
+  </form>
+ 
+</body>
+</html>
+ 
