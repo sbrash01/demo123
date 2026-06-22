@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem 3</title>
+</head>
+<body>
+  <h1>Problem 3</h1>
+  <div id="odds"></div>
+  <div id="sum"></div>
+
+  <script>
+    // Get the two numbers that define the range
+    var a = parseInt(prompt("Enter the start of the range:"), 10);
+    var b = parseInt(prompt("Enter the end of the range:"), 10);
+
+    // Figure out which is low and which is high so the range works either way
+    var low = Math.min(a, b);
+    var high = Math.max(a, b);
+
+    var oddNumbers = "";
+    var sum = 0;
+
+    // ONE loop: collect odd numbers AND build the total sum
+    for (var i = low; i <= high; i++) {
+      sum += i;                  // sum of every number in the range
+      if (i % 2 !== 0) {         // odd check (works for negatives too)
+        oddNumbers += i + " ";
+      }
+    }
+
+    document.getElementById("odds").textContent =
+      "Odd numbers in the range: " + oddNumbers.trim();
+    document.getElementById("sum").textContent =
+      "Sum of all numbers in the range: " + sum;
+  </script>
+</body>
+</html>

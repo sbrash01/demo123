@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem 5</title>
+</head>
+<body>
+  <h1>Problem 5</h1>
+  <div id="list"></div>
+
+  <script>
+    // Takes a comma-separated string of names and displays a numbered list.
+    // Uses ONLY string/array methods -- no for or while loop.
+    function makeNumberedList(names) {
+      var html = names
+        .split(",")                       // string -> array of names
+        .map(function (name) {            // iterate without a loop
+          return "<li>" + name.trim() + "</li>";
+        })
+        .join("");                        // array -> single string
+
+      // <ol> automatically numbers each <li>
+      document.getElementById("list").innerHTML = "<ol>" + html + "</ol>";
+    }
+
+    // Test the function with a hard-coded string
+    makeNumberedList("Pat, Chris, Marlon, Ferncroft, Assunta");
+  </script>
+</body>
+</html>

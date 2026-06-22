@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem 4</title>
+</head>
+<body>
+  <h1>Problem 4</h1>
+  <!-- The div from "Task 0" where results are displayed -->
+  <div id="result"></div>
+
+  <script>
+    // a) Returns how many items in the array are less than value
+    function count(numbers, value) {
+      var total = 0;
+      for (var i = 0; i < numbers.length; i++) {
+        if (numbers[i] < value) {
+          total++;
+        }
+      }
+      return total;
+    }
+
+    // b) Builds the array, calls count(), and displays the result.
+    //    No parameters, no return value.
+    function testCount() {
+      var numbers = [3, 55, 30, 28, 9, 12];
+      var value = 10;
+      var result = count(numbers, value);
+
+      document.getElementById("result").textContent =
+        "Array: [" + numbers.join(", ") + "]  |  Value: " + value +
+        "  ->  count() returned " + result;
+    }
+
+    // Call testCount() from the script
+    testCount();
+  </script>
+</body>
+</html>

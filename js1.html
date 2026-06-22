@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problem 1</title>
+</head>
+<body>
+  <h1>Problem 1</h1>
+  <div id="output"></div>
+
+  <script>
+    // Ask for first and last name (prompt twice)
+    var firstName = prompt("What is your first name?");
+    var lastName = prompt("What is your last name?");
+
+    // Show the full name in a popup
+    alert("Your name is " + firstName + " " + lastName);
+
+    // Ask for the number of children
+    var numChildren = parseInt(prompt("How many children do you have?"), 10);
+
+    // Build a grammatically correct sentence
+    var sentence;
+    if (isNaN(numChildren) || numChildren === 0) {
+      sentence = "You have no children";
+    } else if (numChildren === 1) {
+      sentence = "You have 1 child";
+    } else {
+      sentence = "You have " + numChildren + " children";
+    }
+
+    // Display the sentence on the page (not in a popup)
+    document.getElementById("output").textContent = sentence;
+  </script>
+</body>
+</html>
