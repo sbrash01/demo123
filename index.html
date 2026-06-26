@@ -1,10 +1,131 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Cool Page Here</title>
+  <meta charset="UTF-8">
+  <!-- viewport meta = the first step to being mobile friendly / responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Velvet Hours | Live Indie &amp; Alternative Cover Band in Los Angeles</title>
+  <meta name="description" content="The Velvet Hours are a Los Angeles cover band playing alternative and indie hits from HAIM to Phoebe Bridgers all night long.">
+
+  <!-- EXTERNAL STYLESHEET (shared look) -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Web fonts with safe fallbacks already set in the CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ============================================================
+       INTERNAL STYLESHEET (rubric requirement), only on this page.
+       It styles the home-page banner, which uses hero.jpg as a
+       background image (the banner is allowed to be up to 110k).
+       ============================================================ -->
+  <style>
+    .hero {
+      background-image:
+        linear-gradient(180deg, rgba(29,15,24,0.25), rgba(29,15,24,0.75)),
+        url("images/hero.jpg");
+      background-size: cover;
+      background-position: center;
+      min-height: 380px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 1.4rem;
+    }
+    .hero h1 {
+      font-family: var(--display);
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      color: var(--cream);
+      margin: 0 0 0.4rem;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.55);
+    }
+    .hero p {
+      max-width: 34ch;
+      color: var(--ink);
+      margin: 0 0 1.4rem;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.6);
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hello World!</h1>
-  This is my cool hello world page
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER (consistent element #1) -->
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">VH</span>
+      <span class="brand-text">
+        <span class="brand-name">The Velvet Hours</span>
+        <span class="brand-tagline">Live indie &amp; alternative cover band · Los Angeles</span>
+      </span>
+    </a>
+  </header>
+
+  <!-- NAV (consistent element #2, separate from the header) -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+      <li><a href="band.html">The Band</a></li>
+      <li><a href="songs.html">Song List</a></li>
+      <li><a href="contact.html">Book Us</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <!-- HERO / BANNER (background image set in the internal stylesheet above) -->
+    <section class="hero">
+      <h1>Keep the dance floor full</h1>
+      <!-- INLINE STYLE (rubric requirement) on the next line -->
+      <p style="letter-spacing: 1px;">Alternative and indie covers, played live all night, for the best party of your life.</p>
+      <a class="btn" href="contact.html">Check your date</a>
+    </section>
+
+    <section class="panel">
+      <h2>A five-piece band that reads the room</h2>
+      <p class="lead">
+        The Velvet Hours have played weddings, warehouse parties, and backyard shows
+        across Los Angeles since 2016. Hazy guitars, big harmonies, and a rhythm section
+        that does not quit, building a set around your crowd so everyone from your
+        college roommates to your aunt ends up on the floor.
+      </p>
+    </section>
+
+    <hr class="rule">
+
+    <section>
+      <h2>What every booking includes</h2>
+      <!-- A LIST (rubric requirement) -->
+      <ul class="tick">
+        <li>Up to four hours of live music in two or three sets</li>
+        <li>A custom first-dance arrangement learned just for you</li>
+        <li>Professional PA, stage lighting, and a sound engineer</li>
+        <li>An emcee for toasts, introductions, and announcements</li>
+        <li>Playlist curation for dinner and cocktail hour between sets</li>
+      </ul>
+    </section>
+
+    <hr class="rule">
+
+    <section class="panel">
+      <h2>Upcoming public shows</h2>
+      <p>Come hear us before you book. These dates are open to the public.</p>
+      <ul class="tick">
+        <li>Aug 9, 2026: Summer Nights at The Echo, Echo Park</li>
+        <li>Sep 13, 2026: Sunset Sessions at Zebulon, Frogtown</li>
+        <li>Oct 4, 2026: Fall Showcase at Lodge Room, Highland Park</li>
+      </ul>
+      <p><a class="btn" href="contact.html">Tell us about your event</a></p>
+    </section>
+  </main>
+
+  <!-- FOOTER (consistent element #3) -->
+  <footer class="site-footer">
+    <p>The Velvet Hours · Los Angeles, CA · <a href="mailto:hello@thevelvethours.com">hello@thevelvethours.com</a> · (213) 555-0148</p>
+    <p class="fine">© 2026 The Velvet Hours. Available across Southern California.</p>
+  </footer>
 </body>
 </html>

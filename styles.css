@@ -1,0 +1,351 @@
+/* =====================================================================
+   The Velvet Hours - external stylesheet  (css/styles.css)
+   Linked by every page, so it carries the shared/consistent look.
+
+   Rubric notes:
+   - EXTERNAL STYLESHEET (this whole file)
+   - 12+ CSS rules (there are far more than 12 rule-sets below)
+   - Consistent fixed elements styled here: HEADER, NAV, and FOOTER
+   - Responsive design + a media query near the bottom
+   ===================================================================== */
+
+/* ---- 1. Design tokens (colors + type live in one place) ---- */
+:root {
+  --plum-deep: #1d0f18;
+  --plum-mid:  #301725;
+  --gold:      #d8a657;
+  --champagne: #e9c48a;
+  --rose:      #c97b84;
+  --cream:     #f4ece2;
+  --ink:       #efe6dc;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --maxw: 1060px;
+}
+
+/* ---- 2. Base / reset ---- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--body);
+  color: var(--ink);
+  line-height: 1.65;
+  /* BACKGROUND IMAGE (rubric): velvet texture fixed behind every page */
+  background-color: var(--plum-deep);
+  background-image: url("../images/bg-velvet.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ---- 3. Headings use the display face ---- */
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--cream);
+  letter-spacing: 0.3px;
+}
+
+h2 { font-size: 1.9rem; margin: 0 0 0.6rem; }
+h3 { font-size: 1.25rem; margin: 0 0 0.35rem; color: var(--champagne); }
+
+a { color: var(--champagne); }
+a:hover { color: var(--gold); }
+
+/* ---- 4. Accessibility: skip link + visible keyboard focus (usability) ---- */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  background: var(--gold);
+  color: var(--plum-deep);
+  padding: 8px 14px;
+  border-radius: 0 0 8px 0;
+  font-weight: 600;
+}
+.skip-link:focus { left: 0; top: 0; z-index: 50; }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ---- 5. FIXED ELEMENT #1: site header (band name + tagline) ---- */
+.site-header {
+  text-align: center;
+  padding: 1.6rem 1rem 1rem;
+  background: linear-gradient(180deg, rgba(29,15,24,0.92), rgba(29,15,24,0.55));
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+.brand-mark {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--plum-deep);
+  background: var(--gold);
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(216,166,87,0.25);
+}
+.brand-name {
+  display: block;
+  font-family: var(--display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--cream);
+}
+.brand-tagline {
+  display: block;
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ---- 6. FIXED ELEMENT #2: navigation bar (separate from the header) ---- */
+.site-nav {
+  position: sticky;     /* stays in view as you scroll */
+  top: 0;
+  z-index: 20;
+  background: rgba(29,15,24,0.95);
+  border-top: 1px solid rgba(216,166,87,0.35);
+  border-bottom: 1px solid rgba(216,166,87,0.35);
+  backdrop-filter: blur(4px);
+}
+.site-nav ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: var(--maxw);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.site-nav a {
+  display: block;
+  padding: 0.85rem 1.25rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.site-nav a:hover { background: rgba(216,166,87,0.14); color: var(--gold); }
+/* "you are here" state for usability */
+.site-nav a.active {
+  color: var(--gold);
+  border-bottom: 3px solid var(--gold);
+}
+
+/* ---- 7. Page shell ---- */
+main {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 2.2rem 1.2rem 3rem;
+}
+.lead { font-size: 1.12rem; color: var(--ink); max-width: 60ch; }
+
+.panel {
+  background: rgba(48,23,37,0.72);
+  border: 1px solid rgba(216,166,87,0.22);
+  border-radius: 14px;
+  padding: 1.5rem 1.6rem;
+  margin: 1.4rem 0;
+}
+
+/* gold hairline divider (signature detail) */
+.rule {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 2rem 0;
+}
+
+/* ---- 8. Buttons ---- */
+.btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--plum-deep);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.btn:hover { background: var(--champagne); color: var(--plum-deep); transform: translateY(-2px); }
+
+/* ---- 9. Generic content lists ---- */
+.tick {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.tick li {
+  padding: 0.35rem 0 0.35rem 1.6rem;
+  position: relative;
+}
+.tick li::before {
+  content: "\266A";              /* musical note */
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+/* ---- 10. Band member list (used on band.html) ---- */
+.members {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.members li {
+  background: rgba(48,23,37,0.7);
+  border: 1px solid rgba(216,166,87,0.22);
+  border-radius: 14px;
+  padding: 1.3rem;
+  text-align: center;
+}
+.members img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-bottom: 0.7rem;
+  border: 2px solid var(--gold);
+}
+.members .role {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.78rem;
+}
+
+/* ---- 11. Set-list table (used on songs.html) ---- */
+.setlist {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.setlist caption {
+  text-align: left;
+  color: var(--champagne);
+  font-style: italic;
+  padding-bottom: 0.6rem;
+}
+.setlist th,
+.setlist td {
+  text-align: left;
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid rgba(216,166,87,0.2);
+}
+.setlist thead th {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  border-bottom: 2px solid var(--gold);
+}
+.setlist tbody tr:nth-child(even) { background: rgba(48,23,37,0.45); }
+.setlist tbody tr:hover { background: rgba(216,166,87,0.12); }
+
+/* ---- 12. Booking form (used on contact.html) ---- */
+form fieldset {
+  border: 1px solid rgba(216,166,87,0.25);
+  border-radius: 12px;
+  padding: 1.2rem 1.3rem 1.6rem;
+  margin: 0 0 1.3rem;
+}
+form legend {
+  color: var(--gold);
+  font-family: var(--display);
+  font-size: 1.15rem;
+  padding: 0 0.4rem;
+}
+.field { margin-bottom: 1rem; }
+.field label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: var(--cream);
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid rgba(216,166,87,0.4);
+  background: rgba(29,15,24,0.6);
+  color: var(--cream);
+  font-family: var(--body);
+  font-size: 1rem;
+}
+.field textarea { min-height: 120px; resize: vertical; }
+.required { color: var(--rose); }
+
+/* two-column row inside the form on wider screens */
+.row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* contact details sidebar */
+.contact-grid {
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: 2fr 1fr;
+  align-items: start;
+}
+.aside-card {
+  background: rgba(48,23,37,0.72);
+  border: 1px solid rgba(216,166,87,0.22);
+  border-radius: 14px;
+  padding: 1.3rem;
+}
+
+/* ---- 13. FIXED ELEMENT #3: footer ---- */
+.site-footer {
+  text-align: center;
+  padding: 1.6rem 1rem 2rem;
+  background: rgba(29,15,24,0.92);
+  border-top: 1px solid rgba(216,166,87,0.35);
+  font-size: 0.9rem;
+}
+.site-footer .fine { color: rgba(244,236,226,0.6); font-size: 0.82rem; }
+
+/* ---- 14. Hero on the home page (most hero styling is the page's
+            internal stylesheet; this is the shared frame) ---- */
+.hero {
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 1.6rem;
+}
+
+/* =====================================================================
+   RESPONSIVE: stack everything for phones
+   ===================================================================== */
+@media (max-width: 680px) {
+  .brand-name { font-size: 1.45rem; }
+  h2 { font-size: 1.55rem; }
+  .row,
+  .contact-grid { grid-template-columns: 1fr; }   /* one column on phones */
+  .site-nav a { padding: 0.7rem 0.9rem; }
+  main { padding: 1.5rem 1rem 2.4rem; }
+  body { background-attachment: scroll; }          /* smoother on mobile */
+}

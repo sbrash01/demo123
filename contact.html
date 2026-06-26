@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Us | The Velvet Hours</title>
+  <meta name="description" content="Check our availability and request a quote for your wedding or party from The Velvet Hours.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">VH</span>
+      <span class="brand-text">
+        <span class="brand-name">The Velvet Hours</span>
+        <span class="brand-tagline">Live indie &amp; alternative cover band · Los Angeles</span>
+      </span>
+    </a>
+  </header>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="band.html">The Band</a></li>
+      <li><a href="songs.html">Song List</a></li>
+      <li><a href="contact.html" class="active" aria-current="page">Book Us</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <h2>Check your date</h2>
+    <p class="lead">
+      Tell us about your event and we'll reply within two business days with
+      availability and a quote. Fields marked <span class="required">*</span> are required.
+    </p>
+
+    <hr class="rule">
+
+    <div class="contact-grid">
+      <!-- A FORM (rubric requirement) -->
+      <!-- Static demo: action="#". To collect real submissions, point action
+           at a form service such as Formspree and set method to "post". -->
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Your details</legend>
+
+          <div class="row">
+            <div class="field">
+              <label for="name">Full name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(213) 555-0123">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>About the event</legend>
+
+          <div class="row">
+            <div class="field">
+              <label for="event-type">Event type <span class="required">*</span></label>
+              <select id="event-type" name="event-type" required>
+                <option value="">Choose one…</option>
+                <option value="wedding">Wedding</option>
+                <option value="corporate">Corporate / gala</option>
+                <option value="birthday">Birthday or anniversary</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="date">Event date <span class="required">*</span></label>
+              <input type="date" id="date" name="date" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="guests">Approx. guests</label>
+              <input type="number" id="guests" name="guests" min="1" max="2000" placeholder="120">
+            </div>
+            <div class="field">
+              <label for="city">Venue city</label>
+              <input type="text" id="city" name="city" placeholder="Los Angeles, CA">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Anything we should know?</label>
+            <textarea id="message" name="message" placeholder="Must-play songs, timeline, the vibe you're after…"></textarea>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn">Request availability</button>
+      </form>
+
+      <!-- Contact sidebar -->
+      <aside class="aside-card">
+        <h3>Talk to a human</h3>
+        <p>Prefer to email or call? We're happy to walk through your day.</p>
+        <p>
+          <strong>Email</strong><br>
+          <a href="mailto:hello@thevelvethours.com">hello@thevelvethours.com</a>
+        </p>
+        <p>
+          <strong>Phone</strong><br>
+          <a href="tel:+12135550148">(213) 555-0148</a>
+        </p>
+        <p>
+          <strong>Based in</strong><br>
+          Los Angeles, CA, traveling throughout Southern California
+        </p>
+        <p>
+          <strong>Response time</strong><br>
+          Within two business days
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>The Velvet Hours · Los Angeles, CA · <a href="mailto:hello@thevelvethours.com">hello@thevelvethours.com</a> · (213) 555-0148</p>
+    <p class="fine">© 2026 The Velvet Hours. Available across Southern California.</p>
+  </footer>
+</body>
+</html>
