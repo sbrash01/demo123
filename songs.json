@@ -1,0 +1,52 @@
+{
+  "songs": [
+    {
+      "title": "Who Loves You",
+      "artist": "The Four Seasons",
+      "year": 1975,
+      "genres": ["rock", "disco"]
+    },
+    {
+      "title": "December, 1963 (Oh, What a Night)",
+      "artist": "The Four Seasons",
+      "year": 1975,
+      "genres": ["rock", "disco"]
+    },
+    {
+      "title": "Sherry",
+      "artist": "The Four Seasons",
+      "year": 1962,
+      "genres": ["pop"]
+    },
+    {
+      "title": "Dreams",
+      "artist": "Fleetwood Mac",
+      "year": 1977,
+      "genres": ["rock", "pop"]
+    },
+    {
+      "title": "Go Your Own Way",
+      "artist": "Fleetwood Mac",
+      "year": 1977,
+      "genres": ["rock"]
+    },
+    {
+      "title": "Landslide",
+      "artist": "Fleetwood Mac",
+      "year": 1975,
+      "genres": ["pop", "rock"]
+    },
+    {
+      "title": "Ring of Fire",
+      "artist": "Johnny Cash",
+      "year": 1963,
+      "genres": ["country"]
+    },
+    {
+      "title": "Folsom Prison Blues",
+      "artist": "Johnny Cash",
+      "year": 1955,
+      "genres": ["country"]
+    }
+  ]
+}

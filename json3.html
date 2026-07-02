@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JSON Problem 3 - Filter Songs</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; margin: 40px; }
+  #resultsDiv {
+    border: 1px solid #ccc;
+    padding: 15px;
+    max-width: 400px;
+    margin-top: 20px;
+    min-height: 50px;
+  }
+  select, button { padding: 6px; }
+</style>
+</head>
+<body>
+
+<h1>Part 3: Filter Songs by Genre</h1>
+
+<form id="filterForm">
+  <label for="genreSelect">Genre:</label>
+  <select id="genreSelect"></select>
+  <button type="button" id="filterBtn">Filter</button>
+</form>
+
+<div id="resultsDiv"></div>
+
+<script>
+  var songData; // holds the songs read from songs.json
+
+  function populateGenres(songs) {
+    var genreSet = {};
+
+    for (var i = 0; i < songs.length; i++) {
+      var genres = songs[i].genres;
+      for (var j = 0; j < genres.length; j++) {
+        genreSet[genres[j]] = true;
+      }
+    }
+
+    var select = document.getElementById("genreSelect");
+    for (var genre in genreSet) {
+      var option = document.createElement("option");
+      option.value = genre;
+      option.text = genre;
+      select.appendChild(option);
+    }
+  }
+
+  function filterByGenre() {
+    var select = document.getElementById("genreSelect");
+    var chosenGenre = select.value;
+    var results = document.getElementById("resultsDiv");
+    var html = "";
+
+    for (var i = 0; i < songData.length; i++) {
+      var song = songData[i];
+      if (song.genres.indexOf(chosenGenre) !== -1) {
+        html += "<div>" + song.title + "</div>";
+      }
+    }
+
+    results.innerHTML = html;
+  }
+
+  $(document).ready(function() {
+    $.get("songs.json", function(data) {
+      songData = data.songs;
+      populateGenres(songData);
+    });
+
+    document.getElementById("filterBtn").onclick = filterByGenre;
+  });
+</script>
+
+</body>
+</html>

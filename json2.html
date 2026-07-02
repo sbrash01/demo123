@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JSON Problem 2 - Display Songs</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; margin: 40px; }
+  #songDiv { border: 1px solid #ccc; padding: 15px; max-width: 500px; }
+  .song { margin-bottom: 10px; }
+  .song strong { display: block; }
+</style>
+</head>
+<body>
+
+<h1>Part 2: Song List from songs.json</h1>
+
+<div id="songDiv"></div>
+
+<script>
+  $(document).ready(function() {
+    $.get("songs.json", function(data) {
+      var songs = data.songs;
+      var html = "";
+
+      for (var i = 0; i < songs.length; i++) {
+        var song = songs[i];
+        html += "<div class='song'>";
+        html += "<strong>" + song.title + "</strong>";
+        html += "Artist: " + song.artist + " ";
+        html += "Genre: " + song.genres.join(", ") + " ";
+        html += "Released " + song.year;
+        html += "</div>";
+      }
+
+      document.getElementById("songDiv").innerHTML = html;
+    });
+  });
+</script>
+
+</body>
+</html>
