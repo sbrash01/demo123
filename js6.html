@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JS Problem 6 - Greeting Form</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 40px; }
+  form { border: 1px solid #ccc; padding: 20px; max-width: 400px; }
+  input[type="text"] { padding: 6px; margin-bottom: 15px; width: 100%; box-sizing: border-box; }
+  input[type="button"] { padding: 8px 14px; margin-right: 8px; cursor: pointer; }
+  #output { margin-top: 20px; font-size: 1.2em; font-weight: bold; min-height: 1.5em; }
+</style>
+</head>
+<body>
+
+<h1>Problem 6: Greeting Form</h1>
+
+<form id="greetForm">
+  <label for="nameInput">Enter your name:</label><br>
+  <input type="text" id="nameInput" name="nameInput">
+
+  <div>
+    <input type="button" id="helloBtn" value="Hello">
+    <input type="button" id="goodbyeBtn" value="Good Bye">
+    <input type="button" id="greetingsBtn" value="Greetings">
+  </div>
+</form>
+
+<div id="output"></div>
+
+<script>
+  function speak(greeting) {
+    var name = document.getElementById("nameInput").value;
+    document.getElementById("output").textContent = greeting + " " + name;
+  }
+
+  function handleGreetingClick(event) {
+    // grab the prefix from the button's value, strip trailing "..." if any
+    var greeting = event.target.value;
+    speak(greeting);
+  }
+
+  window.onload = function() {
+    document.getElementById("helloBtn").onclick = handleGreetingClick;
+    document.getElementById("goodbyeBtn").onclick = handleGreetingClick;
+    document.getElementById("greetingsBtn").onclick = handleGreetingClick;
+  };
+</script>
+
+</body>
+</html>
